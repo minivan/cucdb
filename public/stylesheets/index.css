@@ -90,3 +90,37 @@ ul {
 .question .expand:hover {
   text-decoration: underline;
 }
+
+.search input{
+  width: 400px;
+  height: 30px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 14pt;
+  padding: 5px;
+}
+
+.search input:focus {
+  border: 2px solid #6af;
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+   color: #ccc;
+   font-family: 'Source Sans Pro', sans-serif;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #ccc;
+   font-family: 'Source Sans Pro', sans-serif;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #ccc;
+   font-family: 'Source Sans Pro', sans-serif;
+}
+
+:-ms-input-placeholder {
+   color: #ccc;
+   font-family: 'Source Sans Pro', sans-serif;
+}
