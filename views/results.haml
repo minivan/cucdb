@@ -1,0 +1,15 @@
+%ul
+  - results.each do |result|
+    = haml :question, locals: { question: result }
+:javascript
+  $("a.expand").click(function(event) {
+    $(this).parent().toggleClass("collapsed")
+
+    var currentText = $(this).text()
+    if(currentText === "Ascunde răspunsul") {
+      $(this).text("Arată răspunsul")
+    } else {
+      $(this).text("Ascunde răspunsul")
+    }
+    event.preventDefault();
+    })

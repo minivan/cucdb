@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    %script{src: "libs/jquery-2.1.1.min.js"}
+    %script{src: "javascripts/index.js"}
+    %link{:rel => :stylesheet, :type => :"text/css", :href => "stylesheets/index.css"}
+    %link(href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&subset=latin,latin-ext' rel='stylesheet' type='text/css')
+  %body
+    %h1 Caută întrebări
+    %form.search
+      %input{type: "search", name: "search", placeholder:"Cauta in textul intrebarii"}
+    #results
