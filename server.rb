@@ -8,6 +8,14 @@ get '/' do
 end
 
 post '/search' do
-  seach_results = CUC::Questions.random(5)
-  haml :results, locals: { results: seach_results }
+  terms = params["term"].split(" ")
+  search_results = CUC::Questions.search(terms).to_a
+  prefix = "<span class=match>"
+  postfix = "</span>"
+  terms.each do |term|
+    search_results.each do |question|
+      question[:text].gsub!(term, prefix + term + postfix)
+    end
+  end
+  haml :results, locals: { results: search_results }
 end

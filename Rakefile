@@ -22,6 +22,7 @@ namespace :db do
     seeds = File.read('./database/seeds/initial_data.json')
     data = JSON.parse(seeds)
     puts "Inserting #{data.size} questions"
+    CUC::Questions.destroy_all
     CUC::Questions.batch_insert(data)
   end
 end

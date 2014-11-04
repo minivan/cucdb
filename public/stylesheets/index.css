@@ -98,11 +98,15 @@ ul {
   border-radius: 5px;
   font-size: 14pt;
   padding: 5px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .search input:focus {
   border: 2px solid #6af;
   outline: none;
+}
+span.match {
+  color: #6af;
 }
 
 ::-webkit-input-placeholder {

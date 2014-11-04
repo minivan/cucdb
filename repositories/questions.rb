@@ -9,6 +9,15 @@ module CUC
         db.all.sample(number)
       end
 
+      def search(terms)
+        search_terms = terms.map { |t| "%#{t}%"}
+        db.grep(:text, search_terms, case_insensitive: true, all_patterns: true)
+      end
+
+      def destroy_all
+        db.delete
+      end
+
       private
 
       def db
