@@ -18,6 +18,10 @@ module CUC
         db.delete
       end
 
+      def count
+        db.count
+      end
+
       private
 
       def db

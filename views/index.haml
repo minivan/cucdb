@@ -6,7 +6,13 @@
     %link{:rel => :stylesheet, :type => :"text/css", :href => "stylesheets/index.css"}
     %link(href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&subset=latin,latin-ext' rel='stylesheet' type='text/css')
   %body
-    %h1 CUC DB
-    %form.search
-      %input{name: "search", placeholder:"Caută în textul intrebării"}
-    #results
+    .wrapper
+      %h1 CUC DB
+      %form.search
+        %input{name: "search", placeholder:"Caută în textul intrebării"}
+      #results
+    #footer
+      %p
+        Se caută prin #{CUC::Questions.count} întrebări. Ultima actualizare: #{Date.today}.
+        %a{href: "http://github.com/minivan/cucdb"}
+          info
