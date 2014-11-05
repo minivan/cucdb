@@ -1,8 +1,10 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    dotenv (1.0.2)
     haml (4.0.5)
       tilt
+    pg (0.17.1)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
@@ -17,6 +19,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dotenv
   haml
+  pg
   sequel
   sinatra
