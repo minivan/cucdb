@@ -10,7 +10,7 @@ module CUC
       end
 
       def search(terms)
-        search_terms = terms.map { |t| "%#{t}%"}
+        search_terms = prepare_search_terms(terms)
         db.grep(:text, search_terms, case_insensitive: true, all_patterns: true)
       end
 
@@ -23,6 +23,10 @@ module CUC
       end
 
       private
+
+      def prepare_search_terms(terms)
+        terms.map { |t| "%#{t}%"}
+      end
 
       def db
         CUC::DB[:questions]
