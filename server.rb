@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'haml'
-require_relative 'database/setup'
-require_relative 'repositories/questions'
+require_relative 'setup'
 
 get '/' do
   haml :index
