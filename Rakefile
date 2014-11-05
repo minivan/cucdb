@@ -1,11 +1,11 @@
-require_relative 'database/setup'
-require_relative 'repositories/questions'
-
+require_relative 'setup'
 require 'json'
+require 'dotenv/tasks'
+
 
 namespace :db do
   desc 'Run migrations'
-  task :migrate, [:version] do |t, args|
+  task :migrate, [:version] => :dotenv do |t, args|
     Sequel.extension :migration
 
     if args[:version]
@@ -18,7 +18,7 @@ namespace :db do
   end
 
   desc 'Seed the data'
-  task :seed do |t|
+  task :seed => :dotenv do |t|
     seeds = File.read('./database/seeds/initial_data.json')
     data = JSON.parse(seeds)
     puts "Inserting #{data.size} questions"
