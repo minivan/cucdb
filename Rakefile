@@ -1,7 +1,6 @@
 require_relative 'setup'
 require 'csv'
 require 'dotenv/tasks'
-require 'pry'
 
 namespace :db do
   desc 'Run migrations'
