@@ -2,13 +2,15 @@ require 'sinatra'
 require 'haml'
 require_relative 'setup'
 
+PER_PAGE = 3
+
 get '/' do
   haml :index
 end
 
 post '/search' do
   terms = params["term"].split(" ")
-  search_results = CUC::Questions.search(terms).to_a
+  search_results = CUC::Questions.search(terms, page: params[:page]).to_a
   #TODO: please fix this, i feel very bad about it
   prefix = "%<%"
   postfix = "%>%"
