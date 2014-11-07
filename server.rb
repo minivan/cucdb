@@ -5,11 +5,15 @@ require_relative 'setup'
 PER_PAGE = 3
 
 get '/' do
-  haml :index
+  haml :index, locals: { term: nil }
 end
 
-post '/search' do
+get '/search' do
   terms = params["term"].split(" ")
+  haml :results, locals: { results: search(terms), term: params["term"] }
+end
+
+def search(terms)
   search_results = CUC::Questions.search(terms, page: params[:page]).to_a
   #TODO: please fix this, i feel very bad about it
   prefix = "%<%"
@@ -25,5 +29,6 @@ post '/search' do
   search_results.each do |question|
     question[:text].gsub!(postfix, "</span>")
   end
-  haml :results, locals: { results: search_results }
+
+  search_results
 end

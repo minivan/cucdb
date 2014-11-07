@@ -9,7 +9,7 @@ module CUC
         db.all.sample(number)
       end
 
-      def search(terms)
+      def search(terms, options={})
         search_terms = prepare_search_terms(terms)
         db.grep(:text, search_terms, case_insensitive: true, all_patterns: true)
       end
