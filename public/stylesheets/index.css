@@ -169,3 +169,10 @@ span.match {
    color: #ccc;
    font-family: 'Source Sans Pro', sans-serif;
 }
+
+p.found {
+  color: #ccc;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 5px;
+}

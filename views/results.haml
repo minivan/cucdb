@@ -1,3 +1,5 @@
+%p.found
+  Au fost găsite #{results.size} întrebări
 %ul
   - results.each do |result|
     = haml :question, locals: { question: result }
