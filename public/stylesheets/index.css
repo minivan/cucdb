@@ -176,3 +176,11 @@ p.found {
   padding-top: 15px;
   padding-bottom: 5px;
 }
+
+input.error {
+  border: 2px solid #f39292;
+}
+
+input.error:focus {
+  border: 2px solid #f39292;
+}
